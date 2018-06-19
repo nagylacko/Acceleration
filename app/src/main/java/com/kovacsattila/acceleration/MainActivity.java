@@ -1,6 +1,6 @@
 package com.kovacsattila.acceleration;
 
-import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,7 +14,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
@@ -23,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private Sensor mySensor;
     private SensorManager SM;
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
 
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.riverside);
+
+        //mediaPlayer.start();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mediaPlayer.stop();
+        mediaPlayer.release();
     }
 
     @Override

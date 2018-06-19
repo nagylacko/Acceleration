@@ -13,8 +13,18 @@ public class Platform implements GameObject {
     private Rect rectangle;
     private int color;
 
-    public Platform(){
+    public Platform(int startX, int startY, int height, int length,  int color){
+        this.color = color;
+        rectangle = new Rect(startX, startY, startX + height, startY + length);
+    }
 
+    public Rect getRectangle() {
+        return rectangle;
+    }
+
+    public void incrementY(float y) {
+        rectangle.bottom += y;
+        rectangle.top += y;
     }
 
     public boolean playerCollide(Ball ball) {

@@ -19,6 +19,7 @@ public class GameplayScene {
     private Ball ball;
     private Point playerPoint;
     private ObstacleManager obstacleManager;
+    private PlatformManager platformManager;
 
     private boolean movingPlayer = false;
 
@@ -34,6 +35,7 @@ public class GameplayScene {
         ball.update(playerPoint);
 
         obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
+        platformManager = new PlatformManager(200, Color.BLUE);
 
         orientationData = new OrientationData();
         orientationData.register();
@@ -77,6 +79,7 @@ public class GameplayScene {
 
         ball.draw(canvas);
         obstacleManager.draw(canvas);
+        platformManager.draw(canvas);
 
         if(gameOver) {
             Paint paint = new Paint();
