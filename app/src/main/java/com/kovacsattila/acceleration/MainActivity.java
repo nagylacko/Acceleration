@@ -57,7 +57,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.riverside);
 
-        //mediaPlayer.start();
+        if(Constants.MUSIC)
+            mediaPlayer.start();
+
     }
 
     @Override

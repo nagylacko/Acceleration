@@ -30,9 +30,11 @@ public class GameplayScene {
     private long frameTime;
 
     public GameplayScene() {
-        ball = new Ball(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
-        playerPoint = new Point(Constants.SCREEN_WIDTH/2, 3*Constants.SCREEN_HEIGHT/4);
-        ball.update(playerPoint);
+        //ball = new Ball(new Rect(100, 100, 200, 200), Color.rgb(255, 0, 0));
+        playerPoint = new Point(Constants.SCREEN_WIDTH/2, Constants.SCREEN_HEIGHT/5);
+        ball = new Ball(new Point(Constants.SCREEN_WIDTH/2, Constants.SCREEN_HEIGHT/5), 40, Color.rgb(255, 0, 0));
+        //ball = new Ball(playerPoint, 40, Color.rgb(255, 0, 0));
+        //ball.update(playerPoint);
 
         obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
         platformManager = new PlatformManager(200, Color.BLUE);

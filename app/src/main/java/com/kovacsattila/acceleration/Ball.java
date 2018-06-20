@@ -15,6 +15,8 @@ import android.graphics.Rect;
 public class Ball implements GameObject {
 
     private Rect rectangle;
+    private Point point;
+    private int radius;
     private int color;
 
     /*private Animation idle;
@@ -24,6 +26,13 @@ public class Ball implements GameObject {
 
     public Rect getRectangle() {
         return rectangle;
+    }
+
+    public Ball(Point point, int radius, int color){
+        this.point = point;
+        this.radius = radius;
+        this.color = color;
+
     }
 
     public Ball(Rect rectangle, int color) {
@@ -52,8 +61,9 @@ public class Ball implements GameObject {
     public void draw(Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(color);
-        canvas.drawRect(rectangle, paint);
+        //canvas.drawRect(rectangle, paint);
         //animManager.draw(canvas, rectangle);
+        canvas.drawCircle(point.x, point.y, radius, paint);
     }
 
     @Override
@@ -62,6 +72,7 @@ public class Ball implements GameObject {
     }
 
     public void update(Point point) {
+        /*
         float oldLeft = rectangle.left;
 
         rectangle.set(point.x - rectangle.width()/2, point.y - rectangle.height()/2, point.x + rectangle.width()/2, point.y + rectangle.height()/2);
@@ -71,7 +82,7 @@ public class Ball implements GameObject {
             state = 1;
         else if(rectangle.left - oldLeft < -5)
             state = 2;
-
+        */
         //animManager.playAnim(state);
         //animManager.update();
     }

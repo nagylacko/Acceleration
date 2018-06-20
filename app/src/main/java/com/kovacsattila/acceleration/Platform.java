@@ -27,7 +27,7 @@ public class Platform implements GameObject {
         rectangle.top += y;
     }
 
-    public boolean playerCollide(Ball ball) {
+    public boolean BallCollide(Ball ball) {
         //return Rect.intersects(rectangle, ball.getRectangle()) || Rect.intersects(rectangle2, ball.getRectangle());
         return false;
     }

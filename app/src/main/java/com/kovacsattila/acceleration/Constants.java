@@ -14,5 +14,9 @@ public class Constants {
 
     public static long INIT_TIME;
 
+
+    //Game settings
+
     public static boolean GODMODE = true;
+    public static boolean MUSIC = false;
 }
