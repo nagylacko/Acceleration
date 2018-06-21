@@ -19,4 +19,7 @@ public class Constants {
 
     public static boolean GODMODE = true;
     public static boolean MUSIC = false;
+
+    public static boolean PLATFORMS = true;
+    public static boolean OBSTACLES = false;
 }

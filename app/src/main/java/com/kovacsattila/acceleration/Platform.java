@@ -23,8 +23,8 @@ public class Platform implements GameObject {
     }
 
     public void incrementY(float y) {
-        rectangle.bottom += y;
-        rectangle.top += y;
+        rectangle.bottom -= y;
+        rectangle.top -= y;
     }
 
     public boolean BallCollide(Ball ball) {
@@ -36,7 +36,9 @@ public class Platform implements GameObject {
     public void draw(Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(color);
-        canvas.drawRect(rectangle, paint);
+        if(Constants.PLATFORMS){
+            canvas.drawRect(rectangle, paint);
+        }
     }
 
     @Override

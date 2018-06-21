@@ -40,8 +40,10 @@ public class Obstacle implements GameObject {
     public void draw(Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(color);
-        canvas.drawRect(rectangle, paint);
-        canvas.drawRect(rectangle2, paint);
+        if(Constants.OBSTACLES) {
+            canvas.drawRect(rectangle, paint);
+            canvas.drawRect(rectangle2, paint);
+        }
     }
 
     @Override
