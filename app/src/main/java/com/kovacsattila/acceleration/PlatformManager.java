@@ -66,6 +66,6 @@ public class PlatformManager {
     public void draw(Canvas canvas){
         for(Platform pl : platforms)
             pl.draw(canvas);
-        //current point painting missing
+        //current point painting missing 
     }
 }
